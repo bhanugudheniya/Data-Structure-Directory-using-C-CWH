@@ -20,15 +20,27 @@ void Traversal(struct Node *ptr){
     }
 }
 
-
-// Insertion At First
-struct Node * insertionAtFirst(struct Node *head, int data){        // struct Node * insertionAtFirst, bcs we return ptr, which is type of 'struct Node *'
-    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+// Insertion At End
+struct Node * insertAtEnd(struct Node *head, int data)
+{
+    struct Node * ptr = (struct Node *)malloc(sizeof(struct Node));
+    struct Node * p = head;
 
     ptr->data = data;
-    ptr->next = head;  
-    return ptr;
-}
+
+    while (p->next != NULL)
+    {
+        p=p->next;
+    }
+    p->next = ptr;
+    ptr->next = NULL;
+
+    return head;
+    
+};
+
+
+
 
 void main(){
     struct Node *head;
@@ -63,8 +75,7 @@ void main(){
     Traversal(head);
 
     // Call insertion Function
-    head = insertionAtFirst(head, 56);
-
+    head = insertAtEnd(head, 56);
     // Linked List after insertion
     printf("\nLinked List after Insertion\n");
     Traversal(head);
