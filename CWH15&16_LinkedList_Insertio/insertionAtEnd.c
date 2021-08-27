@@ -24,14 +24,14 @@ void Traversal(struct Node *ptr){
 struct Node * insertAtEnd(struct Node *head, int data)
 {
     struct Node * ptr = (struct Node *)malloc(sizeof(struct Node));
-    struct Node * p = head;
-
-    ptr->data = data;
+    struct Node * p = head;     // p is a pointer, there starting point is head. 
 
     while (p->next != NULL)
     {
         p=p->next;
     }
+    
+    ptr->data = data;
     p->next = ptr;
     ptr->next = NULL;
 
