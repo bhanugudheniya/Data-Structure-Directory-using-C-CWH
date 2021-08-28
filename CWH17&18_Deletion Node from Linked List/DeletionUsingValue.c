@@ -69,7 +69,7 @@ void main()
     Traversal(head);
 
     // Deletion Function
-    head = DeletionUsingValue(head, 33);
+    head = DeletionUsingValue(head, 3);
 
     // Traverse after Deletion
     printf("\nTraverse after Deletion\n");
