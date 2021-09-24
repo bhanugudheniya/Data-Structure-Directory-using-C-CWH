@@ -1,3 +1,5 @@
+// Different function for swap
+
 #include<stdio.h>
 
 void UnsortedArr(int arr[], int n){
